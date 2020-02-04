@@ -1,0 +1,26 @@
+<div class="table">
+  <div class="row" *ngIf="match.player1">
+    <div class="col-sm-4">{{match.player1.name}}</div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}  </div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}} </div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[2]?.games}}</div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[3]?.games}}</div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[4]?.games}}</div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.points}}</div>
+    <div class="col-sm-1">{{match.player1.scorePlayer?.numberSetWonByPlayer}}</div>
+
+  </div>
+  <div class="row" *ngIf="match.player1">
+    <div class="col-sm-4">{{match.player2.name}}</div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}  </div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}} </div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[2]?.games}}</div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[3]?.games}}</div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[4]?.games}}</div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.points}}</div>
+    <div class="col-sm-1">{{match.player2.scorePlayer?.numberSetWonByPlayer}}</div>
+  </div>
+</div>
+
+
+

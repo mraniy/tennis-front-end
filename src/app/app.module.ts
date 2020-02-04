@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ScoreBoardService} from './service/ScoreBoardService';
+import {Scoreboardservice} from './service/scoreboardservice';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import {ScoreBoardService} from './service/ScoreBoardService';
     HttpClientModule
   ],
   providers: [
-    ScoreBoardService
+    Scoreboardservice
   ],
   bootstrap: [AppComponent]
 })
