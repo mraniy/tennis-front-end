@@ -56,54 +56,9 @@ describe('Component:ScoreboardComponent', () => {
     // given
     spy = spyOn(mockedScoreBoardService, 'getMatchWithPointsHistory')
       .and.returnValue(of([]));
-    component.match = {
-      player1: {
-        name: 'Federer',
-        scorePlayer: {
-          numberPointsOfGameWonByPlayer: 0,
-          numberGamesWonByPlayerBySet: [
-            {
-              games: 1,
-              tieBreakPoints: null
-            },
-            {
-              games: 6,
-              tieBreakPoints: null
-            },
-            {
-              games: 6,
-              tieBreakPoints: null
-            }
-          ],
-          numberSetWonByPlayer: 2
-        }
-      },
-      player2: {
-        name: 'Nadal',
-        scorePlayer: {
-          numberPointsOfGameWonByPlayer: 0,
-          numberGamesWonByPlayerBySet: [
-            {
-              games: 6,
-              tieBreakPoints: null
-            },
-            {
-              games: 0,
-              tieBreakPoints: null
-            },
-            {
-              games: 3,
-              tieBreakPoints: null
-            }
-          ],
-          numberSetWonByPlayer: 1
-        }
-      },
-      setNumber: 3
-    };
+    component.match = component.initMatch();
     // when
     const match: Match = component.updateScoreBoard(SCOREDISPLAYED);
-    console.log(JSON.stringify(match));
     // then
     assertAllFields(match);
   });
