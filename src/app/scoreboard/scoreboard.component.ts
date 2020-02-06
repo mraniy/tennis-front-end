@@ -35,10 +35,12 @@ export class ScoreboardComponent implements OnInit {
     match.player1 = {};
     match.player1.name = player1Name;
     match.player1.scorePlayer = {};
+    match.player1.scorePlayer.numberSetWonByPlayer = 0;
     match.player1.scorePlayer.numberGamesWonByPlayerBySet = [{games: 0}, {games: 0}, {games: 0}, {games: 0}, {games: 0}];
     match.player2 = {};
     match.player2.name = player2Name;
     match.player2.scorePlayer = {};
+    match.player2.scorePlayer.numberSetWonByPlayer = 0;
     match.player2.scorePlayer.numberGamesWonByPlayerBySet = [{games: 0}, {games: 0}, {games: 0}, {games: 0}, {games: 0}];
     return match;
   }
@@ -63,6 +65,8 @@ export class ScoreboardComponent implements OnInit {
     }
     this.match.player1.scorePlayer.points = scoresdisplayed[index].pointsWonByPlayer1;
     this.match.player2.scorePlayer.points = scoresdisplayed[index].pointsWonByPlayer2;
+    this.match.player1.scorePlayer.numberSetWonByPlayer = scoresdisplayed[index].setsWonByPlayer1[0];
+    this.match.player2.scorePlayer.numberSetWonByPlayer = scoresdisplayed[index].setsWonByPlayer2[0];
     this.fromScoreDisplayedIntoMatch(scoresdisplayed, index);
     return this.match;
   }

@@ -56,7 +56,7 @@ describe('Component:ScoreboardComponent', () => {
     // given
     spy = spyOn(mockedScoreBoardService, 'getMatchWithPointsHistory')
       .and.returnValue(of([]));
-    component.match = component.initMatch();
+    component.match = component.initMatch('federer', 'nadal');
     // when
     const match: Match = component.updateScoreBoard(SCOREDISPLAYED);
     // then
@@ -67,10 +67,12 @@ describe('Component:ScoreboardComponent', () => {
     expect(match.player1.scorePlayer.numberGamesWonByPlayerBySet[0].games).toBe(6);
     expect(match.player1.scorePlayer.numberGamesWonByPlayerBySet[1].games).toBe(1);
     expect(match.player1.scorePlayer.numberGamesWonByPlayerBySet[2].games).toBe(3);
+    expect(match.player1.scorePlayer.numberSetWonByPlayer).toBe(1);
     expect(match.player1.scorePlayer.points).toBe('00');
     expect(match.player2.scorePlayer.numberGamesWonByPlayerBySet[0].games).toBe(4);
     expect(match.player2.scorePlayer.numberGamesWonByPlayerBySet[1].games).toBe(6);
     expect(match.player2.scorePlayer.numberGamesWonByPlayerBySet[2].games).toBe(6);
     expect(match.player2.scorePlayer.points).toBe('00');
+    expect(match.player2.scorePlayer.numberSetWonByPlayer).toBe(2);
   }
 });

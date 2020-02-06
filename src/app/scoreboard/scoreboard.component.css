@@ -1,0 +1,10 @@
+.header-scoreboard {
+  color: #e6ebf1;background-color:#24292e;width: 1000px
+}
+.content-scoreboard {
+  color: #24292e;background-color: #888888;width: 1000px
+}
+
+.player {
+  font-weight: bold;text-decoration: underline
+}
