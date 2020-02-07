@@ -8,4 +8,5 @@ export class Scoredisplayed {
   setsWonByPlayer2?: number[];
   pointsWonByPlayer1?: string;
   pointsWonByPlayer2?: string;
+  whoHasTheServe?: string;
 }

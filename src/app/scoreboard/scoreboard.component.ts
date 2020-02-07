@@ -36,11 +36,13 @@ export class ScoreboardComponent implements OnInit {
     match.player1.name = player1Name;
     match.player1.scorePlayer = {};
     match.player1.scorePlayer.numberSetWonByPlayer = 0;
+    match.player1.serves = true;
     match.player1.scorePlayer.numberGamesWonByPlayerBySet = [{games: 0}, {games: 0}, {games: 0}, {games: 0}, {games: 0}];
     match.player2 = {};
     match.player2.name = player2Name;
     match.player2.scorePlayer = {};
     match.player2.scorePlayer.numberSetWonByPlayer = 0;
+    match.player2.serves = false;
     match.player2.scorePlayer.numberGamesWonByPlayerBySet = [{games: 0}, {games: 0}, {games: 0}, {games: 0}, {games: 0}];
     return match;
   }
@@ -58,15 +60,20 @@ export class ScoreboardComponent implements OnInit {
 
 
   public updateScoreBoard(scoresdisplayed: Scoredisplayed[], index: number = 0): Match {
+    console.log(scoresdisplayed[index].whoHasTheServe);
     const MAX_NUMBER_OF_SET = 5;
     for (let i = 0; i < MAX_NUMBER_OF_SET; i++) {
       this.transformGamesPlayer1(scoresdisplayed[index], i, this.match.player1);
       this.transformGamesPlayer2(scoresdisplayed[index], i, this.match.player2);
     }
+    this.match.player1.serves = scoresdisplayed[index].whoHasTheServe === 'Player1';
+    console.log(this.match.player1.serves);
+    console.log(this.match.player2.serves);
     this.match.player1.scorePlayer.points = scoresdisplayed[index].pointsWonByPlayer1;
     this.match.player2.scorePlayer.points = scoresdisplayed[index].pointsWonByPlayer2;
     this.match.player1.scorePlayer.numberSetWonByPlayer = scoresdisplayed[index].setsWonByPlayer1[0];
     this.match.player2.scorePlayer.numberSetWonByPlayer = scoresdisplayed[index].setsWonByPlayer2[0];
+    this.match.player2.serves = scoresdisplayed[index].whoHasTheServe === 'Player2';
     this.fromScoreDisplayedIntoMatch(scoresdisplayed, index);
     return this.match;
   }

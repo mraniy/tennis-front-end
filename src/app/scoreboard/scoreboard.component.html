@@ -10,7 +10,8 @@
     <div class="col-sm-1">points </div>
   </div>
   <div class="row content-scoreboard" *ngIf="match.player1">
-    <div class="col-sm-4 player" >{{match.player1.name}}</div>
+    <div class="col-sm-1"><img src="assets/img/tennisball.png" [hidden]="!match.player1.serves"></div>
+    <div class="col-sm-3 player" >{{match.player1.name}}</div>
     <div class="col-sm-1">{{match.player1.scorePlayer?.numberSetWonByPlayer}}</div>
     <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}  </div>
     <div class="col-sm-1">{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}} </div>
@@ -20,7 +21,8 @@
     <div class="col-sm-1">{{match.player1.scorePlayer?.points}}</div>
   </div>
   <div class="row content-scoreboard"  *ngIf="match.player1">
-    <div class="col-sm-4 player">{{match.player2.name}}</div>
+    <div class="col-sm-1"><img src="assets/img/tennisball.png" [hidden]="!match.player2.serves"></div>
+    <div class="col-sm-3 player">{{match.player2.name}} </div>
     <div class="col-sm-1">{{match.player2.scorePlayer?.numberSetWonByPlayer}}</div>
     <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}  </div>
     <div class="col-sm-1">{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}} </div>
@@ -31,6 +33,7 @@
 
   </div>
 </div>
+<div> the points of this match are generated in {{updateInterval/1000}} seconds</div>
 
 
 
