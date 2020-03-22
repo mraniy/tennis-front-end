@@ -1,0 +1,24 @@
+<form ngNativeValidate (ngSubmit)="generateScoreBoard()">
+  <div class="table">
+    <div class="row">
+      <div class="col-sm-3">
+        <input [(ngModel)]="player1" name="player1" type="text" placeholder="player1" required/>
+      </div>
+      <div class="col-sm-3">
+        <input [(ngModel)]="player2" name="player2" type="text" placeholder="player2" required/>
+      </div>
+      <div class="col-sm-3">
+        <input [(ngModel)]="interval" name="interval" type="number" placeholder="interval" required/>
+      </div>
+      <div class="col-sm-3">
+        <input type="submit" value="add Match"/>
+      </div>
+    </div>
+  </div>
+  <BR/><BR/>
+  <div *ngFor="let match of matchsInfos">
+    <app-scoreboard [updateInterval]="match.interval"
+                    [player2Name]="match.player2Name"
+                    [player1Name]="match.player1Name"></app-scoreboard>
+  </div>
+</form>
