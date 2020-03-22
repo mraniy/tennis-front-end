@@ -10,7 +10,7 @@ export class Scoreboardservice {
   }
   public getMatchWithPointsHistory(): Observable<Scoredisplayed[]> {
 
-    return this.http.get<Scoredisplayed[]>('http://localhost:8080/randomWithHistory')
+    return this.http.get<Scoredisplayed[]>('http://ec2-18-191-36-130.us-east-2.compute.amazonaws.com/randomWithHistory')
       .pipe(catchError(this.handleError<Scoredisplayed[]>('getMatchWithPointsHistory', [])));
   }
 
