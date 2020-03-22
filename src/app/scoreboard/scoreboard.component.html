@@ -1,7 +1,7 @@
 <div class="table-responsive-sm">
   <table class="table">
 
-    <tr>
+    <tr class="header-scoreboard">
       <td></td>
       <td></td>
       <td>1</td>
@@ -13,7 +13,7 @@
     </tr>
 
 
-    <tr *ngIf="match.player1">
+    <tr class="content-scoreboard" *ngIf="match.player1">
       <td><img src="assets/img/tennisball.png" [hidden]="!match.player1.serves">{{match.player1.name}}</td>
       <td>{{match.player1.scorePlayer?.numberSetWonByPlayer}}</td>
       <td>{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}</td>
@@ -23,7 +23,7 @@
       <td>{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[4]?.games}}</td>
       <td>{{match.player1.scorePlayer?.points}}</td>
     </tr>
-    <tr *ngIf="match.player2">
+    <tr class="content-scoreboard" *ngIf="match.player2">
       <td><img src="assets/img/tennisball.png" [hidden]="!match.player2.serves">{{match.player2.name}}</td>
       <td>{{match.player2.scorePlayer?.numberSetWonByPlayer}}</td>
       <td>{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}</td>
