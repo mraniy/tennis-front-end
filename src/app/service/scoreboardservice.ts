@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 import {Scoredisplayed} from '../model/scoredisplayed';
 
@@ -8,9 +8,13 @@ import {Scoredisplayed} from '../model/scoredisplayed';
 export class Scoreboardservice {
   constructor(private http: HttpClient) {
   }
-  public getMatchWithPointsHistory(): Observable<Scoredisplayed[]> {
+  public getMatchWithPointsHistory(player1Name: string, player2Name: string): Observable<Scoredisplayed[]> {
+    const headers = new Headers();
+    const params = new HttpParams()
+      .set('player1', player1Name)
+      .set('player2', player2Name);
 
-    return this.http.get<Scoredisplayed[]>('http://ec2-18-191-36-130.us-east-2.compute.amazonaws.com/randomWithHistory')
+    return this.http.get<Scoredisplayed[]>('http://localhost:9008/randomWithHistory', {params})
       .pipe(catchError(this.handleError<Scoredisplayed[]>('getMatchWithPointsHistory', [])));
   }
 
