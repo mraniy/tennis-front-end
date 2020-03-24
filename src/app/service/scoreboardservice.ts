@@ -14,7 +14,7 @@ export class Scoreboardservice {
       .set('player1', player1Name)
       .set('player2', player2Name);
 
-    return this.http.get<Scoredisplayed[]>('http://localhost:9008/randomWithHistory', {params})
+    return this.http.get<Scoredisplayed[]>('http://ec2-18-191-36-130.us-east-2.compute.amazonaws.com/randomWithHistory', {params})
       .pipe(catchError(this.handleError<Scoredisplayed[]>('getMatchWithPointsHistory', [])));
   }
 
