@@ -14,7 +14,7 @@
 
 
     <tr class="content-scoreboard" *ngIf="match.player1">
-      <td><img src="assets/img/tennisball.png" [hidden]="!match.player1.serves">{{match.player1.name}}</td>
+      <td><img src="//mraniybucket.s3.eu-west-3.amazonaws.com/static/img/tennisball.png" [hidden]="!match.player1.serves">{{match.player1.name}}</td>
       <td>{{match.player1.scorePlayer?.numberSetWonByPlayer}}</td>
       <td>{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}</td>
       <td>{{match.player1.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}}</td>
@@ -24,7 +24,7 @@
       <td>{{match.player1.scorePlayer?.points}}</td>
     </tr>
     <tr class="content-scoreboard" *ngIf="match.player2">
-      <td><img src="assets/img/tennisball.png" [hidden]="!match.player2.serves">{{match.player2.name}}</td>
+      <td><img src="//mraniybucket.s3.eu-west-3.amazonaws.com/static/img/tennisball.png" [hidden]="!match.player2.serves">{{match.player2.name}}</td>
       <td>{{match.player2.scorePlayer?.numberSetWonByPlayer}}</td>
       <td>{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[0]?.games}}</td>
       <td>{{match.player2.scorePlayer?.numberGamesWonByPlayerBySet[1]?.games}}</td>
